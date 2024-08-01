@@ -7,11 +7,11 @@ const messageModel= mongoose.Schema({
     },
     receiver:{
         type : mongoose.Schema.Types.ObjectId,
-        ref:"user"
+        ref:"User"
     },
     chat:{
         type : mongoose.Schema.Types.ObjectId,
-        ref:"chat"
+        ref:"Chat"
     },
 
 },{
