@@ -15,4 +15,4 @@ function Messageself() {
   )
 }
 
-export default Messageself;
+export default Messageself

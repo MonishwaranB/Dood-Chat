@@ -54,7 +54,7 @@ function Sidebar() {
         <div key={conversation.name}> 
               <Conversationsitem props= {conversation}/>
         </div>
-        ))};
+        ))}
        
       </div>
     </div>
