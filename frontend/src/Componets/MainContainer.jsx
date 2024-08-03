@@ -7,11 +7,13 @@ import Welcome from './Welcome.jsx';
 import CreateGroups from './CreateGroups.jsx';
 import Users_Groups from './Users_Groups.jsx';
 import { Outlet } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 
 export default function MainContainer() {
+  const lightTheme = useSelector((state) => state.themeKey);
  
   return (
-    <div className='Main-Container'>
+    <div className={"Main-Container" + (lightTheme ? "" : " dark")}>
       <Sidebar/>
       <Outlet/>
       {/*<Users_Groups/>*/}

@@ -6,8 +6,11 @@ import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
 import { IconButton } from '@mui/material';
 import Messageothers from './Messageothers.jsx';
 import Messageself from './Messageself.jsx';
+import { useSelector } from 'react-redux';
 
 function ChatArea() {
+  const lightTheme = useSelector((state) => state.themeKey);
+
   const [conversations,setConversations]=useState([
     {
       name:'Test1',
@@ -30,18 +33,18 @@ function ChatArea() {
   
   var props=conversations[0];
   return (
-    <div className='chatArea-container'>
-          <div className='chatArea-header'>
-            <p className='con-icon'>{props.name[0]}</p>
-              <div className='header-text'>
-                <p className='con-title'>{props.name}</p>
-                <p className='con-timeStamp'>{props.timeStamp}</p>
+    <div className={"chatArea-container" + (lightTheme ? "" : " dark")}>
+          <div className={"chatArea-header" + (lightTheme ? "" : " dark")}>
+            <p className={"con-icon" + (lightTheme ? "" : " dark")}>{props.name[0]}</p>
+              <div className={"header-text" + (lightTheme ? "" : " dark")}>
+                <p className={"con-title" + (lightTheme ? "" : " dark")}>{props.name}</p>
+                <p className={"con-timeStamp" + (lightTheme ? "" : " dark")}>{props.timeStamp}</p>
               </div>
-              <IconButton><DeleteTwoToneIcon/></IconButton>
+              <IconButton className={"icon" + (lightTheme ? "" : " dark")}><DeleteTwoToneIcon/></IconButton>
           </div>
 
 
-          <div className='messages-container'>
+          <div className={"messages-container" + (lightTheme ? "" : " dark")}>
             <Messageothers/>
             <Messageself/>
             <Messageothers/>
@@ -53,9 +56,9 @@ function ChatArea() {
           </div>
 
           
-          <div className='text-input-area'>
-            <input type="text" placeholder='Type a message' className='search-box' />
-            <IconButton><SendTwoToneIcon/></IconButton>
+          <div className={"text-input-area" + (lightTheme ? "" : " dark")}>
+            <input type="text" placeholder='Type a message' className={"search-box" + (lightTheme ? "" : " dark")} />
+            <IconButton  className={"icon" + (lightTheme ? "" : " dark")}><SendTwoToneIcon/></IconButton>
           </div>
     </div>
   )
