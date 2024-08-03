@@ -3,6 +3,9 @@ import { useState } from 'react';
 import './MyStyles.css';
 import Sidebar from './Sidebar.jsx';
 import ChatArea from './ChatArea.jsx';
+import Welcome from './Welcome.jsx';
+import CreateGroups from './CreateGroups.jsx';
+import Users_Groups from './Users_Groups.jsx';
 
 export default function MainContainer() {
   const [conversations,setConversations]=useState([
@@ -27,7 +30,10 @@ export default function MainContainer() {
   return (
     <div className='Main-Container'>
       <Sidebar/>
-      <ChatArea props={conversations[0]}/>
+      <Users_Groups/>
+      {/*<ChatArea props={conversations[0]}/> */}
+      {/* <CreateGroups/> */}
+      {/*<Welcome/>*/}
     </div>
   )
 }

@@ -10,24 +10,32 @@ function ChatArea({ props }) {
   
   return (
     <div className='chatArea-container'>
-      <div className='chatArea-header'>
-        <p className='con-icon'>{props.name[0]}</p>
-          <div className='header-text'>
-            <p className='con-title'>{props.name}</p>
-            <p className='con-timeStamp'>{props.timeStamp}</p>
+          <div className='chatArea-header'>
+            <p className='con-icon'>{props.name[0]}</p>
+              <div className='header-text'>
+                <p className='con-title'>{props.name}</p>
+                <p className='con-timeStamp'>{props.timeStamp}</p>
+              </div>
+              <IconButton><DeleteTwoToneIcon/></IconButton>
           </div>
-          <IconButton><DeleteTwoToneIcon/></IconButton>
-      </div>
 
 
-      <div className='messages-container'>
-        <Messageothers/>
-        <Messageself/>
-      </div>
-      <div className='text-input-area'>
-        <input type="text" placeholder='Type a message' className='search-box' />
-        <IconButton><SendTwoToneIcon/></IconButton>
-      </div>
+          <div className='messages-container'>
+            <Messageothers/>
+            <Messageself/>
+            <Messageothers/>
+            <Messageself/>
+            <Messageothers/>
+            <Messageself/>
+            <Messageothers/>
+            <Messageself/>
+          </div>
+
+          
+          <div className='text-input-area'>
+            <input type="text" placeholder='Type a message' className='search-box' />
+            <IconButton><SendTwoToneIcon/></IconButton>
+          </div>
     </div>
   )
 }
