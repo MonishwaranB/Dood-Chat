@@ -4,12 +4,11 @@ import logo from '../Images/chat-i.png'
 import { IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-function Users_Groups() {
-
+function Users() {
   return (
   <div className='list-container'>
     <div className='ug-header'>
-      <img src={logo} alt="Logo" style={{ height: '2rem', width: '2rem', marginLeft: '10px', marginBottom: '18px' }} />
+      <img src={logo} alt="Logo" style={{ height: '2rem', width: '2rem', marginLeft: '10px', marginBottom: '1px' }} />
       <p className='ug-title'>Online Users</p>
     </div>
 
@@ -63,4 +62,4 @@ function Users_Groups() {
   )
 }
 
-export default Users_Groups
+export default Users

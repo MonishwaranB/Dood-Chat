@@ -5,12 +5,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
 import GroupAddRoundedIcon from '@mui/icons-material/GroupAddRounded';
 import ControlPointTwoToneIcon from '@mui/icons-material/ControlPointTwoTone';
-import NightlightRoundOutlinedIcon from '@mui/icons-material/NightlightRoundOutlined';
 import { IconButton } from '@mui/material';
 import Conversationsitem from './Conversationsitem.jsx';
 import ChatArea from './ChatArea.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar() {
+  const navigate =useNavigate();
   const [conversations,setConversations]=useState([
     {
       name:'Test1',
@@ -30,17 +31,24 @@ function Sidebar() {
       timeStamp:'Today'
     }
   ])
+
+ 
   return (
     <div className='sidebar-container'>
-      <div className='sb-header'>
+      <div className='sb-header dark'>
         <div>
         <IconButton><AccountCircleTwoToneIcon/></IconButton>   
       </div>
       <div>
-        <IconButton><PersonAddRoundedIcon/></IconButton>
-        <IconButton><GroupAddRoundedIcon/></IconButton>
-        <IconButton><ControlPointTwoToneIcon/></IconButton>
-        <IconButton><NightlightRoundOutlinedIcon/></IconButton> 
+        <IconButton onClick={()=>{navigate('users')}}>
+          <PersonAddRoundedIcon/>
+        </IconButton>
+        <IconButton onClick={()=>{navigate('groups')}}>
+          <GroupAddRoundedIcon/>
+        </IconButton>
+        <IconButton onClick={()=>{navigate('create-groups')}}>
+          <ControlPointTwoToneIcon/>
+        </IconButton>
       </div>
       </div>
 
@@ -52,7 +60,8 @@ function Sidebar() {
         {
         conversations.map((conversation) => (
         <div key={conversation.name}> 
-              <Conversationsitem props= {conversation}/>
+              <Conversationsitem props= {conversation} 
+               />
         </div>
         ))}
        
